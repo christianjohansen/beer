@@ -1,0 +1,8 @@
+*
+
+!.gitignore
+!beer/*.xaml
+!beer/*.cs
+!beer/packages.config
+
+!*/
