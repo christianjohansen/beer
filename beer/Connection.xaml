@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="beercalc.Connection">
+	<ContentPage.Content>
+        <StackLayout Spacing="10">
+            <Label Text="connected" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label x:Name="connection_text" Text="blabla" VerticalOptions="Center" HorizontalOptions="Center" />
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
