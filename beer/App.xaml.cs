@@ -1,4 +1,9 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Collections.Generic;
+using Plugin.Connectivity;
+
+using Xamarin.Forms;
+
 
 namespace beer
 {
@@ -8,12 +13,20 @@ namespace beer
         {
             InitializeComponent();
 
-            MainPage = new beerPage();
+            MainPage = new NavigationPage(new RecipeStep());
+
+            if (!CrossConnectivity.Current.IsConnected) MainPage.Navigation.PushAsync(new NoConnection());
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            CrossConnectivity.Current.ConnectivityChanged += ConnectionChanged;
+        }
+
+        public void ConnectionChanged(object sender, EventArgs e)
+        {
+            if (CrossConnectivity.Current.IsConnected) MainPage.Navigation.PopAsync();
+            else MainPage.Navigation.PushAsync(new NoConnection());
         }
 
         protected override void OnSleep()

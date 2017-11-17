@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace beercalc
+namespace beer
 {
     public partial class NoConnection : ContentPage
     {
