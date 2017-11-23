@@ -4,6 +4,6 @@ namespace beer
 {
     public interface Repeat
     {
-        public int Duration();
+        int Duration();
     }
 }

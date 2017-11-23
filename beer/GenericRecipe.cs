@@ -42,7 +42,7 @@ namespace beer
                 else if (page == 7) repeat = recipe.hop_used;
     
 
-                if ( sub_page < repeat.Length ) return new Step(generic_recipe[page] + repeat[sub_page++].ToString(),repeat.Duration());
+                if ( sub_page < repeat.Length ) return new Step(generic_recipe[page] + repeat[sub_page++].ToString(),1);
                 else page++;
             }
 

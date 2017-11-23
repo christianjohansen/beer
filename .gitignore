@@ -5,6 +5,7 @@
 !*.config
 !*.sln
 !beer/*.csproj
+!beer/Properties/*.*
 
 !Droid/*.xaml
 !Droid/*.cs

@@ -25,7 +25,7 @@ namespace beer
         }
 
         public void test2() {
-            testout.Text = GenericRecipe.GetStep();
+            //testout.Text = GenericRecipe.GetStep();
 
         }
 
