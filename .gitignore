@@ -3,4 +3,13 @@
 !beer/*.xaml
 !beer/*.cs
 !*.config
+!*.sln
+!beer/*.csproj
 
+!Droid/*.xaml
+!Droid/*.cs
+!Droid/*.config
+!Droid/*.csproj
+!Droid/Assets/*.*
+!Droid/Properties/*.*
+!Droid/Resources/*.*

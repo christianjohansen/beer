@@ -1,7 +1,7 @@
 ﻿using System;
 namespace beer
 {
-    public class Malt
+    public class Malt : Repeat
     {
         public int id { get; set; }
         public int recipe_id { get; set; }
@@ -15,5 +15,17 @@ namespace beer
         public float colour { get; set; }
         public float percent { get; set; }
 
+        public int Duration()
+        {
+            return -1;
+        }
+
+        public override string ToString()
+        {
+            return name;
+        }
+
     }
+
+
 }

@@ -9,11 +9,13 @@ namespace beer
 {
     public partial class App : Application
     {
+        public static double volume;
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new RecipeStep());
+            MainPage = new NavigationPage(new ChooseVolume());
 
             if (!CrossConnectivity.Current.IsConnected) MainPage.Navigation.PushAsync(new NoConnection());
         }

@@ -7,58 +7,29 @@ using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xamarin.Forms;
+using System.Reflection;
 
 namespace beer
 {
     public partial class RecipeStep : ContentPage
     {
-        HttpClient client;
-        int page = 0;
-        int seconds = 1000;
         Boolean stop = false;
         Boolean running = false;
+        int seconds;
 
         public RecipeStep()
         {
             InitializeComponent();
 
-            test();
+            test2();
         }
 
-        public async void test()
-        {
-            client = new HttpClient();
+        public void test2() {
+            testout.Text = GenericRecipe.GetStep();
 
-            var response = await client.GetAsync(new Uri("http://192.168.1.105:3000/test"));
-            //var response = await client.GetAsync(new Uri("http://10.140.73.173:3000/recipe/-/2/-"));
-            //var response = await client.GetAsync(new Uri("http://192.168.43.233:3000/test"));
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-
-                List<Recipe> recipes = JsonConvert.DeserializeObject<List<Recipe>>(content);
-
-                string temp = "";
-                foreach (var recipe in recipes)
-                {
-                    temp += recipe.name + "\n";
-                    temp += "malts:\n";
-                    foreach (var malt in recipe.malt_used)
-                    {
-                        temp += " " + malt.name + "(" + malt.weight + "g)\n";
-                    }
-                    temp += "hops:\n";
-                    foreach (var hop in recipe.hop_used)
-                    {
-                        temp += " " + hop.name + "(" + hop.weight + "g)\n";
-                    }
-                }
-                testout.Text = temp;
-
-            }
         }
 
-        public void testtest(object sender, EventArgs e)
+        public void next(object sender, EventArgs e)
         {
             App.Current.MainPage.Navigation.PushAsync(new RecipeStep());
         }

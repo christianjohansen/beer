@@ -20,13 +20,13 @@ namespace beer
         public string comment { get; set; }
         public string units { get; set; }
         public string brewer { get; set; }
-        public List<Hop> hop_used { get; set; }
-        public List<Malt> malt_used { get; set; }
+        public Hop[] hop_used { get; set; }
+        public Malt[] malt_used { get; set; }
         public string yeast { get; set; }
-        public List<Ferment> fermentation { get; set; }
+        public Ferment[] fermentation { get; set; }
         public string beerstyle { get; set; }
 
-        public List<Mash> mash { get; set; }
+        public Mash[] mash { get; set; }
         //public string weight_unit { get; set; }
         //public string liquid_unit { get; set; }
         //public string temperature_unit { get; set; }
@@ -42,6 +42,7 @@ namespace beer
         {
             return "" + id;
         }
+
     
     
     }

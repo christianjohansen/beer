@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="beer.RecipeStep">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="beer.ChooseVolume">
 	<ContentPage.Content>
         <StackLayout Spacing="10">
             <StackLayout Spacing="10" Margin="10" VerticalOptions="FillAndExpand">
+                <Entry x:Name="volume"></Entry>
                 <Label x:Name="testout" Text="blabla" VerticalOptions="FillAndExpand" HorizontalOptions="Start" />
             </StackLayout>
-            <Button x:Name="timer" Clicked="TimerTrigger" Text="00:00" VerticalOptions="End" HorizontalOptions="FillAndExpand" IsEnabled="false" />
             <Button Clicked="next" Text="next step" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
         </StackLayout>
         
