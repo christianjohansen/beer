@@ -12,5 +12,5 @@
 !Droid/*.config
 !Droid/*.csproj
 !Droid/Assets/*.*
-!Droid/Properties/*.*
-!Droid/Resources/*.*
+!Droid/Properties/*
+!Droid/Resources/*
