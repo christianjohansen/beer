@@ -15,7 +15,7 @@ namespace beer
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ChooseVolume());
+            MainPage = new NavigationPage(new Test());
 
             if (!CrossConnectivity.Current.IsConnected) MainPage.Navigation.PushAsync(new NoConnection());
         }
