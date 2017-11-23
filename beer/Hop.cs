@@ -15,7 +15,7 @@ namespace beer
 
         public int Duration()
         {
-            return -1;
+            return boil;
         }
 
         public override string ToString()

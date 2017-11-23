@@ -12,12 +12,18 @@ namespace beer
             InitializeComponent();
         }
 
-
-
-
         public void next(object sender, EventArgs e)
         {
-            App.volume = Convert.ToDouble(volume.Text);
+            if (((Button)sender).Text == "liters")
+            {
+                App.volume = Convert.ToDouble(volume.Text);
+                App.units = "eu";
+            }
+            else
+            {
+                App.volume = Convert.ToDouble(volume.Text) * 3.79;
+                App.units = "us";
+            }
             App.Current.MainPage.Navigation.PushAsync(new Ingredients());
         }
 

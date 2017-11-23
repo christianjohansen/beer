@@ -18,8 +18,8 @@ namespace beer
         }
 
         public async void ShowIngredients() {
-            System.Diagnostics.Debug.WriteLine("*test*"+App.volume);
-            var response = await (new HttpClient()).GetAsync(new Uri("http://10.140.74.43:3000/recipe/-/2/"+App.volume));
+            //System.Diagnostics.Debug.WriteLine("*test*"+App.volume);
+            var response = await (new HttpClient()).GetAsync(new Uri("http://192.168.1.105:3000/recipe/"+App.units+"/2/"+App.volume));
             if (response.IsSuccessStatusCode) recipes = JsonConvert.DeserializeObject<List<Recipe>>(await response.Content.ReadAsStringAsync());
 
             GenericRecipe.setRecipe(recipes[0]);

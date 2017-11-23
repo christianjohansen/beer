@@ -25,8 +25,14 @@ namespace beer
         }
 
         public void test2() {
-            testout.Text = GenericRecipe.GetStep().text;
-
+            Step s = GenericRecipe.GetStep();
+            testout.Text = s.text;
+            if (s.minutes > 0)
+            {
+                seconds = 60 * s.minutes;
+                timer.Text = "" + s.minutes + ":00";
+            }
+            timer.IsEnabled = (s.minutes > 0);
         }
 
         public void next(object sender, EventArgs e)

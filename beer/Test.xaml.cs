@@ -17,9 +17,14 @@ namespace beer
             //MainPage = new NavigationPage(new ChooseVolume());
         }
 
-        public void christian(object sender, EventArgs e)
+        public void brew(object sender, EventArgs e)
         {
             App.Current.MainPage.Navigation.PushAsync(new ChooseVolume());
+        }
+
+        public void newrecipe(object sender, EventArgs e)
+        {
+            App.Current.MainPage.Navigation.PushAsync(new NewRecipe());
         }
 
 

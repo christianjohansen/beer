@@ -10,6 +10,7 @@ namespace beer
     public partial class App : Application
     {
         public static double volume;
+        public static string units;
 
         public App()
         {

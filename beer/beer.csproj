@@ -46,11 +46,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyPage.xaml">
+    <EmbeddedResource Include="Test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Test.xaml">
+    <EmbeddedResource Include="NewRecipe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -86,11 +86,11 @@
       <DependentUpon>ChooseVolume.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repeat.cs" />
-    <Compile Include="MyPage.xaml.cs">
-      <DependentUpon>MyPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Test.xaml.cs">
       <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewRecipe.xaml.cs">
+      <DependentUpon>NewRecipe.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

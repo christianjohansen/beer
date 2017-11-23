@@ -4,9 +4,9 @@
         <StackLayout Spacing="10">
             <StackLayout Spacing="10" Margin="10" VerticalOptions="FillAndExpand">
                 <Entry x:Name="volume"></Entry>
-                <Label x:Name="testout" Text="blabla" VerticalOptions="FillAndExpand" HorizontalOptions="Start" />
+                <Button Text="gallons" Clicked="next" VerticalOptions="End" HorizontalOptions="FillAndExpand" ></Button>
+                <Button Text="liters" Clicked="next" VerticalOptions="End" HorizontalOptions="FillAndExpand" ></Button>
             </StackLayout>
-            <Button Clicked="next" Text="next step" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
         </StackLayout>
         
 	</ContentPage.Content>

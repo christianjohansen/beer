@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace beer
 {
-    public partial class MyPage : ContentPage
+    public partial class NewRecipe : ContentPage
     {
-        public MyPage()
+        public NewRecipe()
         {
             InitializeComponent();
         }

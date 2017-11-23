@@ -3,7 +3,8 @@
 	<ContentPage.Content>
         <StackLayout Spacing="10">
             <Button Clicked="florin" Text="florin" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
-            <Button Clicked="christian" Text="christian" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+            <Button Clicked="brew" Text="brew" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+            <Button Clicked="newrecipe" Text="new recipe" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
         </StackLayout>        
 	</ContentPage.Content>
 </ContentPage>

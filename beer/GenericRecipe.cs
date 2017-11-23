@@ -11,9 +11,9 @@ namespace beer
         public static Repeat[] repeat;
 
         public static string[] generic_recipe = {
-            "bring water to 65-77 degrees celsius (efter tilsætning skal temp være 68)",
-            "add grain in muslin bag",
-            "steaping / stear 30min",
+            "bring water to 65-77 degrees celsius.",
+            "add grain in muslin bag. Temperature after adding grain should be 68 degrees celsius\n\n",
+            "steap and stear 30min. ",
             "remove grain water through grain",
             "add malt\n\n",
             "stear",
@@ -40,9 +40,10 @@ namespace beer
             {
                 if (page == 4) repeat = recipe.malt_used;
                 else if (page == 7) repeat = recipe.hop_used;
+                else if (page == 1) repeat = recipe.mash;
     
 
-                if ( sub_page < repeat.Length ) return new Step(generic_recipe[page] + repeat[sub_page++].ToString(),1);
+                if ( sub_page < repeat.Length ) return new Step(generic_recipe[page] + repeat[sub_page].ToString(),repeat[sub_page++].Duration());
                 else page++;
             }
 
