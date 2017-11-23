@@ -7,13 +7,12 @@ namespace beer
         public static int page = 0;
         public static int sub_page = 0;
         public static Recipe recipe;
-        public static int[] loops = { 4, 7, 13 };
         public static Repeat[] repeat;
 
         public static string[] generic_recipe = {
             "bring water to 65-77 degrees celsius.",
-            "add grain in muslin bag. Temperature after adding grain should be 68 degrees celsius\n\n",
-            "steap and stear 30min. ",
+            "add grain in muslin bag.\n\n", // resultinh temp should be 68 degrees C
+            "",
             "remove grain water through grain",
             "add malt\n\n",
             "stear",
@@ -36,13 +35,12 @@ namespace beer
         };
 
         public static Step GetStep() {
-            if (page == 4 || page == 7)
+            if (page == 4 || page == 7 || page == 2)
             {
                 if (page == 4) repeat = recipe.malt_used;
                 else if (page == 7) repeat = recipe.hop_used;
-                else if (page == 1) repeat = recipe.mash;
+                else if (page == 2) repeat = recipe.mash;
     
-
                 if ( sub_page < repeat.Length ) return new Step(generic_recipe[page] + repeat[sub_page].ToString(),repeat[sub_page++].Duration());
                 else page++;
             }
@@ -53,6 +51,11 @@ namespace beer
 
         public static void setRecipe(Recipe recipe) {
             GenericRecipe.recipe = recipe;
+            // boil says how long hop should be in wort. But timer needs to know long before next hop should go in
+            for (int a = 0; a < recipe.hop_used.Length - 1; a++)
+            {
+                recipe.hop_used[a].boil -= recipe.hop_used[a + 1].boil;
+            }
         }
     }
 }

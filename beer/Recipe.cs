@@ -27,9 +27,11 @@ namespace beer
         public string beerstyle { get; set; }
 
         public Mash[] mash { get; set; }
-        //public string weight_unit { get; set; }
-        //public string liquid_unit { get; set; }
-        //public string temperature_unit { get; set; }
+
+        public string weight_unit { get; set; } // 
+        public string liquid_unit { get; set; } //
+        public string temperature_unit { get; set; } // hmm
+
         public float total_malt_weight { get; set; }
         public float total_malt_gravity { get; set; }
         public float total_malt_colour { get; set; }

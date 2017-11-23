@@ -15,7 +15,7 @@ namespace beer
 
         public override string ToString()
         {
-            return "mash";
+            return "keep at " + temperature + " for " + duration + " minutes";
         }
 
     }
