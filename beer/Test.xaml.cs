@@ -27,6 +27,10 @@ namespace beer
             App.Current.MainPage.Navigation.PushAsync(new NewRecipe());
         }
 
+        public void search(object sender, EventArgs e)
+        {
+            App.Current.MainPage.Navigation.PushAsync(new Search());
+        }
 
     }
 }

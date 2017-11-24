@@ -51,7 +51,7 @@ namespace beer
 
         public static void setRecipe(Recipe recipe) {
             GenericRecipe.recipe = recipe;
-            // boil says how long hop should be in wort. But timer needs to know long before next hop should go in
+            // boil says how long hop should be in wort. But timer needs to know time before next hop should go in
             for (int a = 0; a < recipe.hop_used.Length - 1; a++)
             {
                 recipe.hop_used[a].boil -= recipe.hop_used[a + 1].boil;
