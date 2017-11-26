@@ -4,7 +4,7 @@
         <StackLayout>
             <Entry x:Name="search" TextChanged="testtest" ></Entry>
             <ScrollView  >
-                <StackLayout  >
+                <StackLayout x:Name="list" >
                     <Label Text="hejsa sdfdfg"></Label>
                 </StackLayout>
             </ScrollView>

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using System.Reflection;
+using Plugin.MediaManager;
 
 namespace beer
 {
@@ -42,6 +43,11 @@ namespace beer
 
         public void TimerTrigger(object sender, EventArgs e)
         {
+            if ( running && !stop ) {
+                CrossMediaManager.Current.PlaybackController.Stop();
+                timer.Text = "0:00";
+                timer.IsEnabled = false;
+            } 
             if (running && stop)
             {
                 running = false;
@@ -57,18 +63,20 @@ namespace beer
 
         async void StartTimer(int sec)
         {
-            //System.Diagnostics.Debug.WriteLine("hejsa");
             seconds = sec;
+            seconds = 10;
             while (!stop && seconds != 0)
             {
                 await Task.Delay(1000);
                 seconds--;
                 int m = (int)Math.Floor((double)(seconds / 60));
-                int s = seconds - 60 * m;
-                timer.Text = "" + m + ":" + s;
+                int s = ((seconds - 60 * m) + 100);
+                timer.Text = "" + m + ":" + (s.ToString()).Substring(1, 2);
             }
             if (seconds != 0) timer.Text += " (paused)";
             //new ButtonTimer(1000, timer);
+            timer.Text = "stop alarm";
+            await CrossMediaManager.Current.Play("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
         }
     }
 }

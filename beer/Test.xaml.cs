@@ -12,14 +12,19 @@ namespace beer
             InitializeComponent();
         }
 
-        public void florin(object sender, EventArgs e)
+        public void login(object sender, EventArgs e)
+        {
+            //MainPage = new NavigationPage(new ChooseVolume());
+        }
+
+        public void signup(object sender, EventArgs e)
         {
             //MainPage = new NavigationPage(new ChooseVolume());
         }
 
         public void brew(object sender, EventArgs e)
         {
-            App.Current.MainPage.Navigation.PushAsync(new ChooseVolume());
+            App.Current.MainPage.Navigation.PushAsync(new Search());
         }
 
         public void newrecipe(object sender, EventArgs e)
@@ -27,10 +32,6 @@ namespace beer
             App.Current.MainPage.Navigation.PushAsync(new NewRecipe());
         }
 
-        public void search(object sender, EventArgs e)
-        {
-            App.Current.MainPage.Navigation.PushAsync(new Search());
-        }
 
     }
 }

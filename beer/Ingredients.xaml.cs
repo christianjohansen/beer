@@ -28,12 +28,12 @@ namespace beer
             temp += "\nmalts:\n";
             foreach (var malt in recipes[0].malt_used)
             {
-                temp += " " + malt.name + " (" + malt.weight + "g)\n";
+                temp += " " + malt.name + " (" + malt.weight + " " + recipes[0].weight_unit + ")\n";
             }
             temp += "\nhops:\n";
             foreach (var hop in recipes[0].hop_used)
             {
-                temp += " " + hop.name + " (" + hop.weight + "g)\n";
+                temp += " " + hop.name + " (" + hop.weight + " " + recipes[0].weight_unit + ")\n";
             }
             testout.Text = temp;
 

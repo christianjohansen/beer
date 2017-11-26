@@ -11,6 +11,7 @@ namespace beer
     {
         public static double volume;
         public static string units;
+        public static string token;
 
         public App()
         {
