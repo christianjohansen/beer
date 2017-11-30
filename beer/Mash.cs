@@ -15,7 +15,7 @@ namespace beer
 
         public override string ToString()
         {
-            return "keep at " + temperature + " for " + duration + " minutes";
+            return "keep at " + temperature + " °" + GenericRecipe.recipe.temperature_unit + " for " + duration + " minutes";
         }
 
     }

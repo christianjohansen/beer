@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 
@@ -18,8 +19,7 @@ namespace beer
         }
 
         public async void ShowIngredients() {
-            //System.Diagnostics.Debug.WriteLine("*test*"+App.volume);
-            var response = await (new HttpClient()).GetAsync(new Uri("http://192.168.1.105:3000/recipe/"+App.units+"/2/"+App.volume));
+            var response = await (Tools.APIClient()).GetAsync(new Uri(App.url + "/recipe/" + App.units + "/" + App.recipe_id + "/" + App.volume));
             if (response.IsSuccessStatusCode) recipes = JsonConvert.DeserializeObject<List<Recipe>>(await response.Content.ReadAsStringAsync());
 
             GenericRecipe.setRecipe(recipes[0]);

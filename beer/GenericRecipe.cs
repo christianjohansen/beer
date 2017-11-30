@@ -9,30 +9,7 @@ namespace beer
         public static Recipe recipe;
         public static Repeat[] repeat;
 
-        public static string[] generic_recipe = {
-            "bring water to 65-77 degrees celsius.",
-            "add grain in muslin bag.\n\n", // resultinh temp should be 68 degrees C
-            "",
-            "remove grain water through grain",
-            "add malt\n\n",
-            "stear",
-            "boil(wort)",
-            "add muslin bag with hops 60min (you can have more hops)\nclearer\n\n",
-            "chill quickly to room temperature - lunken",
-            "sanitize equipment",
-            "remove hops",
-            "into fermentor(you can have more steps of fermenting/lagering)",
-            "top up with water approx. 80% fill",
-            "add yeast",
-            "airlock",
-            "wait for minimum 2 weeks",
-            "add sugar solution to bottling bucket",
-            "sugar and water boiled(boil till clear)",
-            "into bottling bucket",
-            "into bottles",
-            "wait for 1-2 weeks before ready"
-
-        };
+        public static string[] generic_recipe;
 
         public static Step GetStep() {
             if (page == 4 || page == 7 || page == 2)
@@ -49,13 +26,65 @@ namespace beer
             return new Step(generic_recipe[page++],0);
         }
 
-        public static void setRecipe(Recipe recipe) {
+        public static void setRecipe(Recipe recipe)
+        {
             GenericRecipe.recipe = recipe;
             // boil says how long hop should be in wort. But timer needs to know time before next hop should go in
             for (int a = 0; a < recipe.hop_used.Length - 1; a++)
             {
                 recipe.hop_used[a].boil -= recipe.hop_used[a + 1].boil;
             }
+
+            generic_recipe = new string[] { 
+                "bring water to 65-77°"+recipe.temperature_unit,
+                "add grain in muslin bag.\n\n", // resultinh temp should be 68 degrees C
+                "",
+                "remove grain water through grain",
+                "add malt\n\n",
+                "stear",
+                "boil(wort)",
+                "add muslin bag with hops (you can have more hops)\nclearer\n\n",
+                "chill quickly to room temperature - lunken",
+                "sanitize equipment",
+                "remove hops",
+                "into fermentor(you can have more steps of fermenting/lagering)",
+                "top up with water approx. 80% fill",
+                "add yeast",
+                "airlock",
+                "wait for minimum 2 weeks",
+                "add sugar solution to bottling bucket",
+                "sugar and water boiled(boil till clear)",
+                "into bottling bucket",
+                "into bottles",
+                "wait for 1-2 weeks before ready"
+            };
         }
     }
 }
+
+
+/*
+                "bring water to 65-77°",
+                "add grain in muslin bag.\n\n", // resultinh temp should be 68 degrees C
+                "",
+                "remove grain water through grain",
+                "add malt\n\n",
+                "stear",
+                "boil(wort)",
+                "add muslin bag with hops 60min (you can have more hops)\nclearer\n\n",
+                "chill quickly to room temperature - lunken",
+                "sanitize equipment",
+                "remove hops",
+                "into fermentor(you can have more steps of fermenting/lagering)",
+                "top up with water approx. 80% fill",
+                "add yeast",
+                "airlock",
+                "wait for minimum 2 weeks",
+                "add sugar solution to bottling bucket",
+                "sugar and water boiled(boil till clear)",
+                "into bottling bucket",
+                "into bottles",
+                "wait for 1-2 weeks before ready"
+*/
+
+

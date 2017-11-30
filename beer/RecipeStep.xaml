@@ -5,7 +5,7 @@
             <StackLayout Spacing="10" Margin="10" VerticalOptions="FillAndExpand">
                 <Label x:Name="testout" Text="blabla" VerticalOptions="FillAndExpand" HorizontalOptions="Start" />
             </StackLayout>
-            <Button x:Name="timer" Clicked="TimerTrigger" Text="00:00" VerticalOptions="End" HorizontalOptions="FillAndExpand" IsEnabled="false" />
+            <Button x:Name="timer" Clicked="TimerTrigger" Text="0:00" VerticalOptions="End" HorizontalOptions="FillAndExpand" IsEnabled="false" />
             <Button Clicked="next" Text="next step" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
         </StackLayout>
         
