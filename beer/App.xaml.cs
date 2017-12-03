@@ -27,6 +27,7 @@ namespace beer
         protected override void OnStart()
         {
             CrossConnectivity.Current.ConnectivityChanged += ConnectionChanged;
+
         }
 
         public void ConnectionChanged(object sender, EventArgs e)

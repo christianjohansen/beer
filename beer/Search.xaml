@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="beer.Search">
-	<ContentPage.Content>
-        <StackLayout>
-            <Entry x:Name="search" TextChanged="testtest" ></Entry>
-            <ScrollView  >
-                <StackLayout x:Name="list" >
-                    <Label Text="hejsa sdfdfg"></Label>
-                </StackLayout>
-            </ScrollView>
-        </StackLayout>
-        
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="beer.Search" 
+    NavigationPage.HasNavigationBar="False" BackgroundImage="beer.beer-background_1426-1238.jpg"  >
+
+    <ContentPage.Content>
+           
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="Transparent"> 
+            <SearchBar x:Name="search" Placeholder="Search name, style, malt or hop" TextChanged="testtest" VerticalOptions="CenterAndExpand" HeightRequest="20" />
+
+            <ListView x:Name="recipe_list" VerticalOptions="FillAndExpand"  SeparatorVisibility="None" ItemSelected="SelectItem" >
+
+                
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>                
+                
+
+            </ListView>
+
+        </StackLayout>    
+
+
 	</ContentPage.Content>
 </ContentPage>
+
+
+<!--
+
+                IsGroupingEnabled="true" GroupDisplayBinding="{Binding beerstyle_id}" GroupShortNameBinding="{Binding comment}"  >  
+
+
+<ListView x:Name="list2" ItemsSource="{Binding liste2}" VerticalOptions="FillAndExpand"  SeparatorVisibility="None" >  
+
+                    
+
+                </ListView>
+
+
+
+
+        <StackLayout>
+                                <Entry x:Name="search" TextChanged="testtest" ></Entry>
+        </StackLayout>
+
+
+<Setter Property="BackgroundImage">
+        <OnPlatform
+                  x:TypeArguments="string"
+                  iOS="bg/MainBg.png"
+                  Android="MainBg.png"
+                  WinPhone="MainBg.png" />
+</Setter>
+
+-->

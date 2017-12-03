@@ -19,7 +19,7 @@ namespace beer
         }
 
         public async void ShowIngredients() {
-            var response = await (Tools.APIClient()).GetAsync(new Uri(App.url + "/recipe/" + App.units + "/" + App.recipe_id + "/" + App.volume));
+            var response = await (API.Client()).GetAsync(new Uri(App.url + "/recipe/" + App.units + "/" + App.recipe_id + "/" + App.volume));
             if (response.IsSuccessStatusCode) recipes = JsonConvert.DeserializeObject<List<Recipe>>(await response.Content.ReadAsStringAsync());
 
             GenericRecipe.setRecipe(recipes[0]);
@@ -43,6 +43,7 @@ namespace beer
         {
             App.Current.MainPage.Navigation.PushAsync(new RecipeStep());
         }
+
 
     }
 }
