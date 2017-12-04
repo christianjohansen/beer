@@ -3,8 +3,9 @@
    > 
     <ContentPage.Content>
         <StackLayout Spacing="20">
-            <Label Text="hejsa" />
-            <Label Text="mojn" />
+            <Label Text="Login" />
+            <Label Text="Signup" />
+            <Label Text="Units" />
         </StackLayout>        
     </ContentPage.Content>
 </ContentPage>

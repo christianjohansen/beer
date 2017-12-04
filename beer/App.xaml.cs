@@ -12,7 +12,8 @@ namespace beer
         public static double volume;
         public static string units;
         public static string token = "Y2o6YmxhYmxh";
-        public static string url = "http://192.168.1.105:3000";
+        //public static string url = "http://192.168.1.105:3000";
+        public static string url = "http://10.140.73.167:3000";
         public static int recipe_id = 2;
 
         public static NavigationPage front;
@@ -21,14 +22,13 @@ namespace beer
         {
             InitializeComponent();
 
-            //MainPage = new NavigationPage(new Test());
-            //MainPage = new StartPage();
-            front = new NavigationPage(new Test());
+            MainPage = new NavigationPage(new Test());
+            /*front = new NavigationPage(new Test());
             MainPage = new MasterDetailPage()
             {
                 Master = new MenuPage() {Title = "hallo"},
                 Detail = front
-            };
+            };*/
 
             if (!CrossConnectivity.Current.IsConnected) MainPage.Navigation.PushAsync(new NoConnection());
         }

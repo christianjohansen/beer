@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="beer.Test" 
-    BackgroundImage="billede.jpg"  > 
+    NavigationPage.HasNavigationBar="False" BackgroundImage="billede.jpg"  > 
 	<ContentPage.Content>
-        <StackLayout Spacing="20">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+            <Button Clicked="login" Text="Login" Grid.Row="1" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="10" BackgroundColor="Transparent"/>
+            <Button Clicked="signup" Text="Signup" Grid.Row="2" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="10" BackgroundColor="Transparent" />
+            <Button Clicked="brew" Text="Brew" Grid.Row="3" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="10" BackgroundColor="Transparent" />
+            <Button Clicked="newrecipe" Text="New recipe" Grid.Row="4" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="10" BackgroundColor="Transparent" />
+        </Grid>	
+    </ContentPage.Content>
+</ContentPage>
+
+
+<!--
+
+
+
+        <StackLayout Spacing="20" Margin="20">
             <Button Clicked="login" Text="login" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
             <Button Clicked="signup" Text="signup" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
             <Button Clicked="brew" Text="brew" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
             <Button Clicked="newrecipe" Text="new recipe" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
         </StackLayout>        
-	</ContentPage.Content>
-</ContentPage>
+
+-->
+
