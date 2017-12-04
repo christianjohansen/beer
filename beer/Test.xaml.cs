@@ -24,7 +24,7 @@ namespace beer
 
         public void brew(object sender, EventArgs e)
         {
-            App.Current.MainPage.Navigation.PushAsync(new Search());
+            App.front.Navigation.PushAsync(new Search());
         }
 
         public void newrecipe(object sender, EventArgs e)

@@ -15,11 +15,20 @@ namespace beer
         public static string url = "http://192.168.1.105:3000";
         public static int recipe_id = 2;
 
+        public static NavigationPage front;
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Test());
+            //MainPage = new NavigationPage(new Test());
+            //MainPage = new StartPage();
+            front = new NavigationPage(new Test());
+            MainPage = new MasterDetailPage()
+            {
+                Master = new MenuPage() {Title = "hallo"},
+                Detail = front
+            };
 
             if (!CrossConnectivity.Current.IsConnected) MainPage.Navigation.PushAsync(new NoConnection());
         }
