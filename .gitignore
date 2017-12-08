@@ -14,3 +14,11 @@
 !Droid/Assets/*.*
 !Droid/Properties/*
 !Droid/Resources/**
+
+!IOS/*.xaml
+!IOS/*.cs
+!IOS/*.config
+!IOS/*.csproj
+!IOS/Assets/*.*
+!IOS/Properties/*
+!IOS/Resources/**

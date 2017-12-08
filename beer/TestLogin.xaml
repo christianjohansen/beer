@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    NavigationPage.HasNavigationBar="False" x:Class="beer.TestLogin">
+	<ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="50">
+            <Entry x:Name="email" Placeholder="email" HorizontalTextAlignment="Center"/>
+            <Entry x:Name="password" Placeholder="password" IsPassword="true" HorizontalTextAlignment="Center"  />
+            <Button Text="login" Clicked="login" BorderColor="Black" BorderWidth="2" BorderRadius="1000" BackgroundColor="Transparent" />
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

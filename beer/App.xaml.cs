@@ -11,9 +11,10 @@ namespace beer
     {
         public static double volume;
         public static string units;
-        public static string token = "Y2o6YmxhYmxh";
-        //public static string url = "http://192.168.1.105:3000";
-        public static string url = "http://10.140.73.167:3000";
+        public static string token = "";
+        public static string url = "http://192.168.1.105:3000";
+        //public static string url = "http://192.168.43.233:3000";
+        //public static string url = "http://10.140.73.167:3000";
         public static int recipe_id = 2;
 
         public static NavigationPage front;

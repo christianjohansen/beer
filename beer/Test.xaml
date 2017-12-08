@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="beer.Test" 
     NavigationPage.HasNavigationBar="False" BackgroundImage="billede.jpg"  > 
 	<ContentPage.Content>
-        <Grid>
+        <Grid RowSpacing="15">
           <Grid.RowDefinitions>
             <RowDefinition Height="6*" />
             <RowDefinition Height="*" />
@@ -16,10 +16,10 @@
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="*" />
           </Grid.ColumnDefinitions>
-            <Button Clicked="login" Text="Login" Grid.Row="1" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="10" BackgroundColor="Transparent"/>
-            <Button Clicked="signup" Text="Signup" Grid.Row="2" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="10" BackgroundColor="Transparent" />
-            <Button Clicked="brew" Text="Brew" Grid.Row="3" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="10" BackgroundColor="Transparent" />
-            <Button Clicked="newrecipe" Text="New recipe" Grid.Row="4" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="10" BackgroundColor="Transparent" />
+            <Button Clicked="brew" Text="Brew" Grid.Row="1" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="1000" BackgroundColor="Transparent" />
+            <Button Clicked="newrecipe" Text="New recipe" Grid.Row="2" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="1000" BackgroundColor="Transparent" />
+            <Button Clicked="login" Text="Login" Grid.Row="3" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="1000" BackgroundColor="Transparent"/>
+            <Button Clicked="signup" Text="Signup" Grid.Row="4" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="1000" BackgroundColor="Transparent" />
         </Grid>	
     </ContentPage.Content>
 </ContentPage>

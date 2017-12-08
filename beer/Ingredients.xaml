@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="beer.Ingredients">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="beer.Ingredients" NavigationPage.HasNavigationBar="False" >
 	<ContentPage.Content>
         <StackLayout Spacing="10" >
             <StackLayout Spacing="10" Margin="10" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
                 <Label x:Name="testout" Text="blabla" VerticalOptions="FillAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
             </StackLayout>
-            <Button Clicked="next" Text="brew" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+            <Button Clicked="next" Text="brew" VerticalOptions="End" HorizontalOptions="FillAndExpand" BorderColor="Black" BorderWidth="2" BorderRadius="1000" BackgroundColor="Transparent" />
+            <Button Clicked="next" Text="change volume" VerticalOptions="End" HorizontalOptions="FillAndExpand" BorderColor="Black" BorderWidth="2" BorderRadius="1000" BackgroundColor="Transparent" />
         </StackLayout>
 
     </ContentPage.Content>

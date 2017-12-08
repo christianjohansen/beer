@@ -15,6 +15,7 @@ namespace beer
         public void login(object sender, EventArgs e)
         {
             //MainPage = new NavigationPage(new ChooseVolume());
+            App.Current.MainPage.Navigation.PushAsync(new TestLogin());
         }
 
         public void signup(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace beer
 
         public void newrecipe(object sender, EventArgs e)
         {
-            App.Current.MainPage.Navigation.PushAsync(new NewRecipe());
+            if ( App.token != "" ) App.Current.MainPage.Navigation.PushAsync(new NewRecipe());
         }
 
 

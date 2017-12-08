@@ -10,16 +10,25 @@ namespace beer
     public partial class Ingredients : ContentPage
     {
         List<Recipe> recipes;
+        string volume;
+        string units;
 
-        public Ingredients()
-        {
+        public Ingredients(string volume, string units) {
             InitializeComponent();
-
+            this.volume = volume;
+            this.units = units;
             ShowIngredients();
         }
 
+        public Ingredients():this("-","-")
+        {
+        }
+
         public async void ShowIngredients() {
-            var response = await (API.Client()).GetAsync(new Uri(App.url + "/recipe/" + App.units + "/" + App.recipe_id + "/" + App.volume));
+            System.Diagnostics.Debug.WriteLine(App.volume);
+            if (App.volume == 0) volume = "-";
+            else volume = "" + App.volume;
+            var response = await (API.Client(false)).GetAsync(new Uri(App.url + "/recipe/"+units+"/" + App.recipe_id + "/"+volume));
             if (response.IsSuccessStatusCode) recipes = JsonConvert.DeserializeObject<List<Recipe>>(await response.Content.ReadAsStringAsync());
 
             GenericRecipe.setRecipe(recipes[0]);

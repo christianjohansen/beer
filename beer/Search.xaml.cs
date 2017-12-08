@@ -27,7 +27,7 @@ namespace beer
 
         public void SelectItem(object sender, SelectedItemChangedEventArgs e) {
             App.recipe_id = ( (Recipe)( ((ListView)sender).SelectedItem ) ).id;
-            App.Current.MainPage.Navigation.PushAsync(new ChooseVolume());
+            App.Current.MainPage.Navigation.PushAsync(new Ingredients());
         }
 
         async void testtest(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace beer
             lookfor = search.Text;
             if (lookfor.Length > 2 )
             {
-                var response = await (API.Client()).GetAsync(new Uri(App.url+"/search/" + lookfor));
+                var response = await (API.Client(false)).GetAsync(new Uri(App.url+"/search/" + lookfor));
                 if (response.IsSuccessStatusCode) recipes = JsonConvert.DeserializeObject<List<Recipe>>(await response.Content.ReadAsStringAsync());
 
                 list.Clear();
