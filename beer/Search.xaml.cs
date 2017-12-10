@@ -26,8 +26,10 @@ namespace beer
         }
 
         public void SelectItem(object sender, SelectedItemChangedEventArgs e) {
-            App.recipe_id = ( (Recipe)( ((ListView)sender).SelectedItem ) ).id;
+            if (((ListView)sender).SelectedItem == null) return;
+            App.recipe_id = ((Recipe)(((ListView)sender).SelectedItem)).id;
             App.Current.MainPage.Navigation.PushAsync(new Ingredients());
+            ((ListView)sender).SelectedItem = null;
         }
 
         async void testtest(object sender, EventArgs e)

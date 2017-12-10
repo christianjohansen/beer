@@ -22,12 +22,16 @@ namespace beer
 
         public static async void Login(string email, string password)
         {
-            string token = "";
             var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(email+":"+password));
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
             var response = await client.GetAsync(new Uri(App.url + "/login"));
-            if (response.IsSuccessStatusCode) App.token = await response.Content.ReadAsStringAsync();
+            if (response.IsSuccessStatusCode)
+            {
+                App.token = await response.Content.ReadAsStringAsync();
+                ((Test)App.test).setColor();
+                App.Current.MainPage.Navigation.PopAsync();
+            }
         }
 
     }

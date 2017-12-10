@@ -18,12 +18,14 @@ namespace beer
         public static int recipe_id = 2;
 
         public static NavigationPage front;
+        public static ContentPage test;
 
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Test());
+            test = new Test(); 
+            MainPage = new NavigationPage(test);
             /*front = new NavigationPage(new Test());
             MainPage = new MasterDetailPage()
             {

@@ -16,10 +16,10 @@
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="*" />
           </Grid.ColumnDefinitions>
-            <Button Clicked="brew" Text="Brew" Grid.Row="1" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="1000" BackgroundColor="Transparent" />
-            <Button Clicked="newrecipe" Text="New recipe" Grid.Row="2" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="1000" BackgroundColor="Transparent" />
-            <Button Clicked="login" Text="Login" Grid.Row="3" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="1000" BackgroundColor="Transparent"/>
-            <Button Clicked="signup" Text="Signup" Grid.Row="4" Grid.Column="1" BorderColor="Black" BorderWidth="2" BorderRadius="1000" BackgroundColor="Transparent" />
+            <Button Clicked="brew" Text="Just Brew" Grid.Row="1" Grid.Column="1"  BorderRadius="1000" BackgroundColor="#aa1960aa" />
+            <Button x:Name="new_recipe" Clicked="newrecipe" Text="New recipe" Grid.Row="2" Grid.Column="1" BorderRadius="1000" BackgroundColor="#aa850909" />
+            <Button Clicked="login" Text="Login" Grid.Row="3" Grid.Column="1" BorderRadius="1000" BackgroundColor="#aa1960aa"/>
+            <Button Clicked="signup" Text="Signup" Grid.Row="4" Grid.Column="1" BorderRadius="1000" BackgroundColor="#aa1960aa" />
         </Grid>	
     </ContentPage.Content>
 </ContentPage>

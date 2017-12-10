@@ -3,33 +3,45 @@
     NavigationPage.HasNavigationBar="False"   >
 
     <ContentPage.Content>
-           
-        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="Transparent"> 
-            <SearchBar x:Name="search" Placeholder="Search name, style, malt or hop" TextChanged="testtest" VerticalOptions="CenterAndExpand" HeightRequest="20" />
 
-            <ListView x:Name="recipe_list" VerticalOptions="FillAndExpand"  SeparatorVisibility="None" ItemSelected="SelectItem" >
 
-                
-                
+        <Grid RowSpacing="15">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="2*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="19*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+            <Frame Grid.Row="1" Grid.Column="1" Margin="0" Padding="0" CornerRadius="10" BackgroundColor="#aa1960aa">
+                <SearchBar x:Name="search"  Placeholder="Search name, style, malt or hop" TextChanged="testtest"  VerticalOptions="CenterAndExpand"  />
+            </Frame>
+            <ListView x:Name="recipe_list" Grid.Row="2" Grid.Column="1" VerticalOptions="FillAndExpand"  SeparatorVisibility="None" ItemSelected="SelectItem" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding name}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>                
-                
-
             </ListView>
-
-        </StackLayout>    
-
-
+        </Grid> 
 	</ContentPage.Content>
 </ContentPage>
 
 
 <!--
 
-                IsGroupingEnabled="true" GroupDisplayBinding="{Binding beerstyle_id}" GroupShortNameBinding="{Binding comment}"  >  
+
+
+
+
+
+
+
+IsGroupingEnabled="true" GroupDisplayBinding="{Binding beerstyle_id}" GroupShortNameBinding="{Binding comment}"  >  
 
 
 <ListView x:Name="list2" ItemsSource="{Binding liste2}" VerticalOptions="FillAndExpand"  SeparatorVisibility="None" >  

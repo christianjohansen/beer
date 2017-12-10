@@ -33,6 +33,10 @@ namespace beer
             if ( App.token != "" ) App.Current.MainPage.Navigation.PushAsync(new NewRecipe());
         }
 
+        public void setColor() {
+            new_recipe.BackgroundColor = Color.FromHex("aa1960aa");
+        }
+
 
     }
 }

@@ -2,6 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="beer.Ingredients" NavigationPage.HasNavigationBar="False" >
 	<ContentPage.Content>
+        <Grid RowSpacing="15" Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="19*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="1" Grid.Column="1" FontSize="14" x:Name="testout" Text="blabla" VerticalOptions="FillAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            <Button Grid.Row="3" Grid.Column="1" Clicked="next" Text="brew" VerticalOptions="End" HorizontalOptions="FillAndExpand" BorderRadius="1000" BackgroundColor="#aa1960aa" />
+            <Button Grid.Row="4" Grid.Column="1" Clicked="next" Text="change volume" VerticalOptions="End" HorizontalOptions="FillAndExpand" BorderRadius="1000" BackgroundColor="#aa1960aa" />
+        </Grid>    
+
+    </ContentPage.Content>
+</ContentPage>
+
+<!--
         <StackLayout Spacing="10" >
             <StackLayout Spacing="10" Margin="10" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
                 <Label x:Name="testout" Text="blabla" VerticalOptions="FillAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
@@ -10,5 +32,4 @@
             <Button Clicked="next" Text="change volume" VerticalOptions="End" HorizontalOptions="FillAndExpand" BorderColor="Black" BorderWidth="2" BorderRadius="1000" BackgroundColor="Transparent" />
         </StackLayout>
 
-    </ContentPage.Content>
-</ContentPage>
+-->
