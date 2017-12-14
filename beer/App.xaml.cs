@@ -12,9 +12,8 @@ namespace beer
         public static double volume;
         public static string units = "eu";
         public static string token = "";
-        //public static string url = "http://192.168.1.105:3000";
-        //public static string url = "http://192.168.43.233:3000";
-        public static string url = "http://10.140.64.88:3000";
+        public static string url = "http://192.168.1.105:3000"; // hjemme
+        //public static string url = "http://10.140.64.88:3000"; // skole
         public static int recipe_id = 2;
 
         public static NavigationPage front;
