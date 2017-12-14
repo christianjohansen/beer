@@ -2,13 +2,44 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="beer.ChooseVolume" NavigationPage.HasNavigationBar="False" >
 	<ContentPage.Content>
+        <Grid RowSpacing="15" Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="19*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+                <Grid Grid.Row="1" Grid.Column="1" ColumnSpacing="15" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>        
+                    <Button Grid.Column="0" x:Name="eu" Text="Metric" Clicked="metric" BorderRadius="1000" BackgroundColor="#aa07800a" />
+                    <Button Grid.Column="1" x:Name="us" Text="Imperial" Clicked="imperial" BorderRadius="1000" BackgroundColor="#aa1960aa" />
+                </Grid>
+                <Entry Grid.Row="3" Grid.Column="1" x:Name="volume" Placeholder="" HorizontalTextAlignment="Center"></Entry>
+                <Button Grid.Row="4" Grid.Column="1" Text="Set volume" Clicked="set_volume" BorderRadius="1000" BackgroundColor="#aa1960aa" VerticalOptions="End" HorizontalOptions="FillAndExpand" ></Button>
+        </Grid>    
+
+
+<!--        
         <StackLayout Spacing="10">
             <StackLayout Spacing="10" Margin="10" VerticalOptions="FillAndExpand">
                 <Entry x:Name="volume"></Entry>
                 <Button Text="gallons" Clicked="next" VerticalOptions="End" HorizontalOptions="FillAndExpand" ></Button>
                 <Button Text="liters" Clicked="next" VerticalOptions="End" HorizontalOptions="FillAndExpand" ></Button>
+
+                                
             </StackLayout>
         </StackLayout>
+-->        
         
 	</ContentPage.Content>
 </ContentPage>

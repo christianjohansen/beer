@@ -7,15 +7,19 @@ namespace beer
 {
     public partial class TestLogin : ContentPage
     {
-        public TestLogin()
+        public TestLogin(string message,ContentPage after_login)
         {
             InitializeComponent();
+
+            login_message.Text = message;
         }
 
         public void login(object sender, EventArgs e)
         {
-            API.Login(email.Text,password.Text);
+            API.Login(email.Text,password.Text); 
         }
 
+
     }
+
 }

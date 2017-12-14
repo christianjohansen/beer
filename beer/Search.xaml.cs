@@ -8,42 +8,45 @@ using System.Text;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 
-using Xamarin.Forms;
 
 namespace beer
 {
     public partial class Search : ContentPage
     {
         string lookfor = "";
-        ObservableCollection<Recipe> list = new ObservableCollection<Recipe>();
-        List<Recipe> recipes = new List<Recipe>();
+        ObservableCollection<RecipeSearch> list = new ObservableCollection<RecipeSearch>();
+        List<RecipeSearch> recipes = new List<RecipeSearch>();
 
         public Search()
         {
             InitializeComponent();
 
             recipe_list.ItemsSource = list;
+
+            GetSearchResults();
         }
 
         public void SelectItem(object sender, SelectedItemChangedEventArgs e) {
             if (((ListView)sender).SelectedItem == null) return;
-            App.recipe_id = ((Recipe)(((ListView)sender).SelectedItem)).id;
+            App.recipe_id = ((RecipeSearch)(((ListView)sender).SelectedItem)).id;
             App.Current.MainPage.Navigation.PushAsync(new Ingredients());
             ((ListView)sender).SelectedItem = null;
         }
 
         async void testtest(object sender, EventArgs e)
         {
+            GetSearchResults();
+        }
+
+        async void GetSearchResults() {
             lookfor = search.Text;
-            if (lookfor.Length > 2 )
-            {
-                var response = await (API.Client(false)).GetAsync(new Uri(App.url+"/search/" + lookfor));
-                if (response.IsSuccessStatusCode) recipes = JsonConvert.DeserializeObject<List<Recipe>>(await response.Content.ReadAsStringAsync());
+            if (lookfor == null || lookfor.Equals("")) lookfor = "*"; 
+            var response = await(API.Client(false)).GetAsync(new Uri(App.url + "/search/"+lookfor));
+            if (response.IsSuccessStatusCode) recipes = JsonConvert.DeserializeObject<List<RecipeSearch>>(await response.Content.ReadAsStringAsync());
 
-                list.Clear();
-                foreach (var element in recipes ) list.Add(element);
+            list.Clear();
+            foreach (var element in recipes) list.Add(element);
 
-            }
         }
 
     }

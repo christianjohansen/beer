@@ -38,7 +38,7 @@ namespace beer
                 if ( seconds == 0 )
                 {
                     button.BackgroundColor = Color.FromHex("aa850909");
-                    await CrossMediaManager.Current.Play("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
+                    await CrossMediaManager.Current.Play("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"); // change taack or to alarm
                 }
             }
             else if ( function == "" && seconds > 0 ) {

@@ -30,7 +30,6 @@ namespace beer
             {
                 App.token = await response.Content.ReadAsStringAsync();
                 ((Test)App.test).setColor();
-                App.Current.MainPage.Navigation.PopAsync();
             }
         }
 

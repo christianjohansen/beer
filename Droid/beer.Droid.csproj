@@ -150,6 +150,8 @@
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\billede.jpg" />
+    <AndroidResource Include="Resources\drawable\hop.png" />
+    <AndroidResource Include="Resources\drawable\billede2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />

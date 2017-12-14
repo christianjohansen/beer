@@ -19,6 +19,11 @@ namespace beer
             InitializeComponent();
 
             Step s = GenericRecipe.GetStep();
+            if (GenericRecipe.isLast)
+            {
+                nextstep.Text = "finished";
+                nextstep.BackgroundColor = Color.FromHex("aaf4a200");
+            }
             testout.Text = s.text;
             EggWatch.setWatch(s.minutes, timer);
             timer.IsEnabled = (EggWatch.seconds > 0);
@@ -26,7 +31,8 @@ namespace beer
 
         public void next(object sender, EventArgs e)
         {
-            App.Current.MainPage.Navigation.PushAsync(new RecipeStep());
+            if (!GenericRecipe.isLast) App.Current.MainPage.Navigation.PushAsync(new RecipeStep());
+            else App.Current.MainPage.Navigation.PopToRootAsync();
         }
 
         public void TimerTrigger(object sender, EventArgs e)

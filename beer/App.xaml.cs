@@ -10,11 +10,11 @@ namespace beer
     public partial class App : Application
     {
         public static double volume;
-        public static string units;
+        public static string units = "eu";
         public static string token = "";
         public static string url = "http://192.168.1.105:3000";
         //public static string url = "http://192.168.43.233:3000";
-        //public static string url = "http://10.140.73.167:3000";
+        //public static string url = "http://10.140.64.88:3000";
         public static int recipe_id = 2;
 
         public static NavigationPage front;
@@ -26,12 +26,6 @@ namespace beer
 
             test = new Test(); 
             MainPage = new NavigationPage(test);
-            /*front = new NavigationPage(new Test());
-            MainPage = new MasterDetailPage()
-            {
-                Master = new MenuPage() {Title = "hallo"},
-                Detail = front
-            };*/
 
             if (!CrossConnectivity.Current.IsConnected) MainPage.Navigation.PushAsync(new NoConnection());
         }

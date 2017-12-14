@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    NavigationPage.HasNavigationBar="False" x:Class="beer.TestLogin">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" NavigationPage.HasNavigationBar="False" x:Class="beer.Signup">
 	<ContentPage.Content>
         <Grid RowSpacing="15">
           <Grid.RowDefinitions>
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="2*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
           </Grid.RowDefinitions>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -20,7 +20,9 @@
             <Label x:Name="login_message" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center"/>
             <Entry x:Name="email" Grid.Row="2" Grid.Column="1" Placeholder="email" HorizontalTextAlignment="Center" />
             <Entry x:Name="password" Grid.Row="3" Grid.Column="1" Placeholder="password" IsPassword="true" HorizontalTextAlignment="Center" />
-            <Button Text="login" Clicked="login" Grid.Row="5" Grid.Column="1" BorderRadius="1000" BackgroundColor="#aa1960aa" />
+            <Entry x:Name="repeat_password" Grid.Row="4" Grid.Column="1" Placeholder="repeat password" IsPassword="true" HorizontalTextAlignment="Center" />
+            <Button Text="Signup" Clicked="signup" Grid.Row="6" Grid.Column="1" BorderRadius="1000" BackgroundColor="#aa1960aa" />
         </Grid> 
 	</ContentPage.Content>
 </ContentPage>
+

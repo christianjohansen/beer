@@ -25,9 +25,9 @@ namespace beer
         }
 
         public async void ShowIngredients() {
-            System.Diagnostics.Debug.WriteLine(App.volume);
-            if (App.volume == 0) volume = "-";
-            else volume = "" + App.volume;
+            if (volume == "") volume = "-";
+            //else volume = "" + App.volume;
+            System.Diagnostics.Debug.WriteLine(units+","+volume);
             var response = await (API.Client(false)).GetAsync(new Uri(App.url + "/recipe/"+units+"/" + App.recipe_id + "/"+volume));
             if (response.IsSuccessStatusCode) recipes = JsonConvert.DeserializeObject<List<Recipe>>(await response.Content.ReadAsStringAsync());
 
@@ -51,6 +51,11 @@ namespace beer
         public void next(object sender, EventArgs e)
         {
             App.Current.MainPage.Navigation.PushAsync(new RecipeStep());
+        }
+
+        public void change_volume(object sender, EventArgs e)
+        {
+            App.Current.MainPage.Navigation.PushAsync(new ChooseVolume());
         }
 
 

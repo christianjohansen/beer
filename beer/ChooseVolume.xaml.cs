@@ -10,22 +10,41 @@ namespace beer
         public ChooseVolume()
         {
             InitializeComponent();
+
+            setButtons();
         }
 
-        public void next(object sender, EventArgs e)
-        {
-            if (((Button)sender).Text == "liters")
-            {
-                App.volume = Convert.ToDouble(volume.Text);
-                App.units = "eu";
+        public void setButtons() 
+        {   
+            if ( App.units == "eu" ) {
+                eu.BackgroundColor = Color.FromHex("aa07800a");
+                us.BackgroundColor = Color.FromHex("aa1960aa");
+                volume.Placeholder = "Enter number of liters";
             }
-            else
-            {
-                App.volume = Convert.ToDouble(volume.Text) * 3.79;
-                App.units = "us";
+            else {
+                us.BackgroundColor = Color.FromHex("aa07800a");
+                eu.BackgroundColor = Color.FromHex("aa1960aa");
+                volume.Placeholder = "Enter number of gallons";
             }
-            App.Current.MainPage.Navigation.PushAsync(new Ingredients());
         }
+
+        public void metric(object sender, EventArgs e) 
+        {
+            App.units = "eu";
+            setButtons();
+        }
+
+        public void imperial(object sender, EventArgs e)
+        {
+            App.units = "us";
+            setButtons();
+        }
+
+        public void set_volume(object sender, EventArgs e)
+        {
+            App.Current.MainPage.Navigation.PushAsync(new Ingredients(volume.Text,App.units));
+        }
+
 
     }
 }

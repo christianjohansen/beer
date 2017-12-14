@@ -5,25 +5,38 @@
     <ContentPage.Content>
 
 
-        <Grid RowSpacing="15">
+        <Grid>
           <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="10*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="12*" />
           </Grid.RowDefinitions>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="19*" />
-            <ColumnDefinition Width="*" />
-          </Grid.ColumnDefinitions>
-            <Frame Grid.Row="1" Grid.Column="1" Margin="0" Padding="0" CornerRadius="10" BackgroundColor="#aa1960aa">
-                <SearchBar x:Name="search"  Placeholder="Search name, style, malt or hop" TextChanged="testtest"  VerticalOptions="CenterAndExpand"  />
-            </Frame>
-            <ListView x:Name="recipe_list" Grid.Row="2" Grid.Column="1" VerticalOptions="FillAndExpand"  SeparatorVisibility="None" ItemSelected="SelectItem" >
+          </Grid.ColumnDefinitions>            
+            <SearchBar x:Name="search" BackgroundColor="#aa1960aa" Grid.Row="0" Grid.Column="0" Placeholder="Search name, style, malt or hop" TextChanged="testtest"  VerticalOptions="CenterAndExpand"  />
+            <ListView x:Name="recipe_list" Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand"  SeparatorVisibility="None" ItemSelected="SelectItem" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding name}" />
+                        <ViewCell>
+                            <Grid RowSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="17*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>            
+                                <Label Grid.Column="1" Text="{Binding name}" HorizontalOptions="StartAndExpand"/>   
+                                <!--<Image Grid.Column="2" Source="hop.png" VerticalOptions="Start" />   
+                                <Image Grid.Column="3" Source="hop.png" VerticalOptions="Start" />   
+                                <Image Grid.Column="4" Source="hop.png" VerticalOptions="Start" />   
+                                <Image Grid.Column="5" Source="hop.png" VerticalOptions="Start" />   
+                                <Image Grid.Column="6" Source="hop.png" VerticalOptions="Start" />-->
+                            </Grid>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>                
             </ListView>
@@ -33,6 +46,7 @@
 
 
 <!--
+                            
 
 
 

@@ -9,7 +9,7 @@ namespace beer
         public int yeast_id { get; set; }
         public int brewer_id { get; set; }
         public int beerstyle_id { get; set; }
-        public int volume { get; set; }
+        public float volume { get; set; }
         public float efficiency { get; set; }
         public string mash_schedule { get; set; }
         public float boil_volume { get; set; }
