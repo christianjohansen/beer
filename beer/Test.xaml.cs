@@ -15,7 +15,8 @@ namespace beer
         public void login(object sender, EventArgs e)
         {
             //MainPage = new NavigationPage(new ChooseVolume());
-            App.Current.MainPage.Navigation.PushAsync(new TestLogin(""));
+            if (App.token != "") App.Current.MainPage.Navigation.PushAsync(new AlreadyLoggedIn());
+            else App.Current.MainPage.Navigation.PushAsync(new TestLogin("",null));
         }
 
         public void signup(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace beer
         public void newrecipe(object sender, EventArgs e)
         {
             if ( App.token != "" ) App.Current.MainPage.Navigation.PushAsync(new NewRecipe());
-            else App.Current.MainPage.Navigation.PushAsync(new TestLogin("You need to login prior to\nsubmiting a new recipe"));
+            else App.Current.MainPage.Navigation.PushAsync(new TestLogin("You need to login prior to\nsubmiting a new recipe",new NewRecipe()));
         }
 
         public void setColor() {

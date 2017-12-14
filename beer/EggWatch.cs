@@ -44,6 +44,8 @@ namespace beer
             else if ( function == "" && seconds > 0 ) {
                 running = false;
                 function = "paused";
+                button.BackgroundColor = Color.FromHex("aaf4a200");
+
                 DisplayWatch();
             }
             else if ( seconds == 0 && running ) {

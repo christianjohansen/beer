@@ -5,16 +5,19 @@
     <ContentPage.Content>
 
 
-        <Grid>
+        <Grid >
           <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="12*" />
           </Grid.RowDefinitions>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
           </Grid.ColumnDefinitions>            
-            <SearchBar x:Name="search" BackgroundColor="#aa1960aa" Grid.Row="0" Grid.Column="0" Placeholder="Search name, style, malt or hop" TextChanged="testtest"  VerticalOptions="CenterAndExpand"  />
-            <ListView x:Name="recipe_list" Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand"  SeparatorVisibility="None" ItemSelected="SelectItem" >
+            <Frame CornerRadius="100" HasShadow="false" HeightRequest="50" Grid.Row="1">
+                <Entry x:Name="search" WidthRequest="100" HeightRequest="30" BackgroundColor="#aa1960aa" Placeholder="Search name, style, malt or hop" TextChanged="testtest"  VerticalOptions="CenterAndExpand"  />
+            </Frame>
+            <ListView x:Name="recipe_list" Grid.Row="2" Grid.Column="0" VerticalOptions="FillAndExpand"  SeparatorVisibility="None" ItemSelected="SelectItem" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -30,6 +33,12 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>            
                                 <Label Grid.Column="1" Text="{Binding name}" HorizontalOptions="StartAndExpand"/>   
+
+                                <Label Grid.Column="2" Text="h" HorizontalOptions="StartAndExpand"/>   
+                                <Label Grid.Column="3" Text="m" HorizontalOptions="StartAndExpand"/>   
+                                <Label Grid.Column="4" Text="b" HorizontalOptions="StartAndExpand"/>   
+                                <Label Grid.Column="5" Text="s" HorizontalOptions="StartAndExpand"/>   
+
                                 <!--<Image Grid.Column="2" Source="hop.png" VerticalOptions="Start" />   
                                 <Image Grid.Column="3" Source="hop.png" VerticalOptions="Start" />   
                                 <Image Grid.Column="4" Source="hop.png" VerticalOptions="Start" />   

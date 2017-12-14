@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 //using System.Linq;
 //using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Xamarin.Forms;
 
 
 namespace beer
@@ -20,7 +21,7 @@ namespace beer
             return client;
         }
 
-        public static async void Login(string email, string password)
+        public static async void Login(string email, string password, ContentPage after_login)
         {
             var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(email+":"+password));
             HttpClient client = new HttpClient();
@@ -30,6 +31,8 @@ namespace beer
             {
                 App.token = await response.Content.ReadAsStringAsync();
                 ((Test)App.test).setColor();
+                if (after_login == null) App.Current.MainPage.Navigation.PopAsync();
+                else App.Current.MainPage.Navigation.PushAsync(after_login);
             }
         }
 
