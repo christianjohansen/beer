@@ -7,28 +7,31 @@ namespace beer
         public static int page = 0;
         public static int sub_page = 0;
         public static Recipe recipe;
-        public static Repeat[] repeat;
+        //public static Repeat[] repeat;
         public static bool isLast;
+        public static Step next;
 
         public static string[] generic_recipe;
 
         public static Step GetStep() {
-            if (page == 2 || page == 3 || page == 1 || page==10)
-            {
-                if (page == 2) repeat = recipe.mash;
-                else if (page == 3) repeat = recipe.hop_used;
-                else if (page == 1) repeat = recipe.malt_used;
-                else if (page == 10) 
-
-                System.Diagnostics.Debug.WriteLine("0:" + sub_page);
-                System.Diagnostics.Debug.WriteLine("1:" + generic_recipe[page]);
-                if (sub_page < repeat.Length) return new Step(generic_recipe[page].Replace("#subst#",repeat[sub_page].ToString()), repeat[sub_page++].Duration());
-                else page++;
-            }
+            if (page == 2) return GetSubStep((Repeat[])recipe.mash);
+            if (page == 1) return GetSubStep((Repeat[])recipe.malt_used);
+            if (page == 3) return GetSubStep((Repeat[])recipe.hop_used);
 
             sub_page = 0;
             isLast = (page == generic_recipe.Length-1);
             return new Step(generic_recipe[page++],0);
+        }
+
+        public static Step GetSubStep(Repeat[] substeps) {
+            next = new Step(generic_recipe[page].Replace("#subst#", substeps[sub_page].ToString()), substeps[sub_page++].Duration());
+
+            if (sub_page == substeps.Length)
+            {
+                page++;
+                sub_page = 0;
+            }
+            return next;
         }
 
         public static void setRecipe(Recipe recipe)
@@ -157,6 +160,52 @@ namespace beer
     }
 
 
+        public static Step GetStep() {
+            if (page == 2 || page == 3 || page == 1 )
+            {
+                if (page == 2) repeat = recipe.mash;
+                else if (page == 3) repeat = recipe.hop_used;
+                else if (page == 1) repeat = recipe.malt_used;
+
+                System.Diagnostics.Debug.WriteLine("------------1------------");
+                System.Diagnostics.Debug.WriteLine("a:" + page);
+                System.Diagnostics.Debug.WriteLine("0:" + sub_page);
+                System.Diagnostics.Debug.WriteLine("1:" + generic_recipe[page]);
+                if (sub_page < repeat.Length) return new Step(generic_recipe[page].Replace("#subst#", repeat[sub_page].ToString()), repeat[sub_page++].Duration());
+                else page++;
+            }
+            System.Diagnostics.Debug.WriteLine("------------2------------");
+            System.Diagnostics.Debug.WriteLine("a:" + page);
+            System.Diagnostics.Debug.WriteLine("0:" + sub_page);
+            System.Diagnostics.Debug.WriteLine("1:" + generic_recipe[page]);
+
+            sub_page = 0;
+            isLast = (page == generic_recipe.Length-1);
+            return new Step(generic_recipe[page++],0);
+        }
+
+
+
+        public static Step GetStep() {
+            if (page == 2) return GetSubStep((Repeat[])recipe.mash);
+            if (page == 1) return GetSubStep((Repeat[])recipe.malt_used);
+            if (page == 3) return GetSubStep((Repeat[])recipe.hop_used);
+
+            sub_page = 0;
+            isLast = (page == generic_recipe.Length-1);
+            return new Step(generic_recipe[page++],0);
+        }
+
+        public static Step GetSubStep(Repeat[] substeps) {
+            next = new Step(generic_recipe[page].Replace("#subst#", substeps[sub_page].ToString()), substeps[sub_page++].Duration());
+
+            if (sub_page == repeat.Length)
+            {
+                page++;
+                sub_page = 0;
+            }
+            return next;
+        }
 
 
 

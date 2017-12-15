@@ -22,7 +22,7 @@ namespace beer
 
         public override string ToString()
         {
-            return name;
+            return name + "\n\n" + weight + " " + GenericRecipe.recipe.weight_unit;
         }
 
     }

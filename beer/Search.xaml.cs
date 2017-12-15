@@ -35,7 +35,7 @@ namespace beer
 
         async void testtest(object sender, EventArgs e)
         {
-            GetSearchResults();
+            GetSearchResults(); 
         }
 
         async void GetSearchResults() {
