@@ -13,7 +13,7 @@
             <ColumnDefinition Width="19*" />
             <ColumnDefinition Width="*" />
           </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="1" x:Name="testout" Text="blabla" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            <Label FontSize="20" Grid.Row="0" Grid.Column="1" x:Name="testout" Text="blabla" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
             <Button Grid.Row="1" Grid.Column="1" x:Name="timer" Clicked="TimerTrigger" Text="0:00" VerticalOptions="End" HorizontalOptions="FillAndExpand" 
                 BorderRadius="1000" IsEnabled="false" BackgroundColor="#aa1960aa" />
             <Button x:Name="nextstep" Grid.Row="2" Grid.Column="1" Clicked="next" Text="next step" BackgroundColor="#aa1960aa" VerticalOptions="End" HorizontalOptions="FillAndExpand" BorderRadius="1000" />
