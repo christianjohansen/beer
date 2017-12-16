@@ -44,9 +44,10 @@ namespace beer
             var response = await(API.Client(false)).GetAsync(new Uri(App.url + "/search/"+lookfor));
             if (response.IsSuccessStatusCode) recipes = JsonConvert.DeserializeObject<List<RecipeSearch>>(await response.Content.ReadAsStringAsync());
 
-            list.Clear();
-            foreach (var element in recipes) list.Add(element);
 
+            int a = 0;
+            list.Clear();
+            foreach (var element in recipes) list.Add(element.setFormat(RecipeSearch.colors[a++ % 2]));
         }
 
     }

@@ -16,10 +16,10 @@
           </Grid.ColumnDefinitions>            
             <SearchBar x:Name="search" BackgroundColor="#aa1960aa" Grid.Row="1" Grid.Column="0" Placeholder="Search name, style, malt or hop" TextChanged="testtest"  VerticalOptions="CenterAndExpand"  />
             <ListView x:Name="recipe_list" Grid.Row="2" Grid.Column="0" VerticalOptions="FillAndExpand"  SeparatorVisibility="None" ItemSelected="SelectItem" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
+                <ListView.ItemTemplate >
+                    <DataTemplate >
                         <ViewCell>
-                            <Grid RowSpacing="0">
+                            <Grid RowSpacing="0" BackgroundColor="{ Binding backgroundcolor }">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="17*" />
@@ -32,10 +32,10 @@
                                 </Grid.ColumnDefinitions>            
                                 <Label Grid.Column="1" Text="{Binding name}" HorizontalOptions="StartAndExpand"/>   
 
-                                <Label Grid.Column="2" Text="h" HorizontalOptions="StartAndExpand"/>   
-                                <Label Grid.Column="3" Text="m" HorizontalOptions="StartAndExpand"/>   
-                                <Label Grid.Column="4" Text="b" HorizontalOptions="StartAndExpand"/>   
-                                <Label Grid.Column="5" Text="s" HorizontalOptions="StartAndExpand"/>   
+                                <Label Grid.Column="2" Text="{Binding filter2string[1]}" HorizontalOptions="StartAndExpand"/>   
+                                <Label Grid.Column="3" Text="{Binding filter2string[2]}" HorizontalOptions="StartAndExpand"/>   
+                                <Label Grid.Column="4" Text="{Binding filter2string[3]}" HorizontalOptions="StartAndExpand"/>   
+                                <Label Grid.Column="5" Text="{Binding filter2string[4]}" HorizontalOptions="StartAndExpand"/>   
 
                                 <!--<Image Grid.Column="2" Source="hop.png" VerticalOptions="Start" />   
                                 <Image Grid.Column="3" Source="hop.png" VerticalOptions="Start" />   
